@@ -11,12 +11,23 @@ class App extends Component{
     ]
   }
 
+  addSupe = (superhero) => {
+    console.log("Inside App.js", superhero);
+    superhero.id = Math.random();
+    let superheroes = [...this.state.superheroes, superhero];
+    this.setState({
+      superheroes : superheroes
+    })
+  }
+
+  deletSupe = (id) => {}
+
   render(){
     return (
       <div className="App">
         <h1>This is my first create-react-app</h1>
         <Person superheroes={this.state.superheroes} />
-        <AddPerson />
+        <AddPerson addSupe={this.addSupe}/>
       </div>
     );
   }  
