@@ -1,9 +1,9 @@
 import React from 'react';
 import './person.css'
 
- const Person = (props) => {
+ const Person = ({ superheroes, deleteSupe }) => {
 
-    const { superheroes } = props;
+    // const  { superheroes, deleteSupe }= props;
 
         const supesList = superheroes.map( supe => {
             return ( supe.age > 10 ? (
@@ -11,7 +11,7 @@ import './person.css'
                         <div>Name: {supe.name}</div>
                         <div>Age: {supe.age}</div>
                         <div>Location: {supe.location}</div>
-                        <button onClick={}>Delete</button>
+                        <button onClick={() => {deleteSupe(supe.id)}}>Delete</button>
                     </div>
             ): null )
         });

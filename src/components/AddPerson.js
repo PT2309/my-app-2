@@ -16,10 +16,12 @@ class AddPerson extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         console.log("Current State", this.state)
-        console.log(this.props.addSupe(this.state));
+        this.props.addSupe(this.state);
+
     }
 
     render(){
+        console.log("Inside Form Render");
         return(
             <div className="person-details">
                 <form onSubmit={this.handleSubmit}>
